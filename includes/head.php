@@ -1,7 +1,6 @@
-<?php
-/**
- * Created by IntelliJ IDEA.
- * User: Sayantan Bakshi
- * Date: 17-02-16
- * Time: 11.30
- */
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="/assets/css/ui.css">
+</head>
