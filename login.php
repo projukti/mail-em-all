@@ -8,7 +8,7 @@
             <!--            <img src="/assets/img/logo.png" alt="">-->
             <div>Account Login</div>
             <input type="text" placeholder="Username">
-            <input id="password" class="pull-left" type="password" placeholder="Password">
+            <input id="password" class="pull-left" type="password" placeholder="Password"></span>
             <input type="checkbox" id="remember" name="remember"><label for="remember">Remember me</label>
             <button>Login</button>
         </form>

@@ -5321,6 +5321,36 @@ button {
     font-weight: 100;
 }
 
+.validate-message {
+    position: absolute;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    font-size: 14px;
+    z-index: 9999;
+}
+
+.validate-message ul {
+    list-style: none;
+    padding: 0;
+    margin: 0
+}
+
+.validate-message ul li {
+    display: none;
+    padding: 5px;
+    padding-left: 25px
+}
+
+.validate-message ul li:before {
+    content: '○ ';
+    color: #ff1097;
+    margin-left: -17px
+}
+
 /* ==================================
    Responsive
    ================================== */
