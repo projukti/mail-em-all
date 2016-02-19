@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -27,6 +28,7 @@ footer, header, hgroup, menu, nav, section {
 
 body {
     line-height: 1;
+    height: 100%;
 }
 
 ol, ul {
@@ -68,7 +70,6 @@ body > header, body > main, body > footer {
     src: local('ProximaNovaRegular'), url('../fonts/ProximaNovaRegular.woff') format('woff'), url('../fonts/ProximaNovaRegular.ttf') format('truetype');
 }
 
-@charset "UTF-8";
 @font-face {
     font-family: 'brandico';
     font-style: normal;
@@ -5004,6 +5005,14 @@ body {
     float: right
 }
 
+.text-right {
+    text-align: right;
+}
+
+.text-center {
+    text-align: center;
+}
+
 .block, .width-full {
     display: table;
     width: 100%
@@ -5011,32 +5020,38 @@ body {
 
 .width-half, .width-3by6, .width-2by4 {
     display: table;
-    width: 50%
+    width: 50%;
+    float: left;
 }
 
 .width-1by4 {
     display: table;
-    width: 25%
+    width: 25%;
+    float: left;
 }
 
 .width-3by4 {
     display: table;
-    width: 75%
+    width: 75%;
+    float: left;
 }
 
 .width-1by6 {
     display: table;
-    width: calc(100% / 6)
+    width: calc(100% / 6);
+    float: left;
 }
 
 .width-2by6, .width-1by3 {
     display: table;
-    width: calc(100% / 3)
+    width: calc(100% / 3);
+    float: left;
 }
 
 .width-4by6, .width-2by3 {
     display: table;
-    width: calc(200% / 3)
+    width: calc(200% / 3);
+    float: left;
 }
 
 .container {
@@ -5044,9 +5059,21 @@ body {
     margin: 0 auto
 }
 
+a {
+    text-decoration: none
+}
+
 /* ==================================
    Top Bar
    ================================== */
+body > header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    left: 0;
+    z-index: 9999
+}
+
 a.logo {
     display: inline-block;
     float: left
@@ -5066,13 +5093,13 @@ ul.menu {
 }
 
 ul.menu li {
-    font-size: 18px;
+    font-size: 15px;
     display: inline-block;
     margin-right: -4px;
     position: relative;
     /*background: #fff;*/
     cursor: pointer;
-    padding: 21px 21px;
+    padding: 23px 21px;
     -webkit-transition: all 0.2s;
     -moz-transition: all 0.2s;
     -ms-transition: all 0.2s;
@@ -5152,10 +5179,147 @@ ul.menu li img {
 /* ==================================
    Footer
    ================================== */
+body > footer {
+    padding: 25px 0
+}
+
+ul.footerlinks {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    float: right
+}
+
+ul.footerlinks li {
+    float: left;
+    padding: 0 10px
+}
+
+ul.footerlinks li:after {
+    content: '|';
+    position: absolute;
+    right: -1px;
+    margin-left: 2px
+}
+
+ul.footerlinks > li:last-child:after {
+    content: '';
+}
+
+footer a, ul.footerlinks a {
+    text-decoration: none;
+    color: inherit
+}
 
 /* ==================================
-   Login Page
+   Page
    ================================== */
+body > main {
+    margin-top: 60px;
+    min-height: 530px
+}
+
+.login-box, .register-box {
+    padding: 30px;
+    border: none;
+    margin: 6% 0px 0 auto;
+    width: 30%;
+    min-width: 240px;
+    border-radius: 7px;
+    font-size: 15px;
+}
+
+.register-box {
+    margin: 5.1% 0px 0 auto;
+    padding: 30px 30px 15px 30px;
+}
+
+input, button {
+    width: 100%;
+    padding: 13px 17px;
+    margin-bottom: 20px;
+    outline: none;
+    border: 1px solid;
+    font-size: 15px;
+    font-family: 'ProximaNovaRegular', sans-serif
+}
+
+input[type=password] {
+    padding-right: 24px;
+}
+
+input[type=password]:after {
+    content: "\e70a";
+    font-family: 'entypo', sans-serif;
+}
+
+input[type=checkbox] {
+    height: 18px;
+    width: 18px;
+    border-radius: 4px;
+    vertical-align: bottom;
+    padding: 0;
+    margin-bottom: 0;
+    margin-right: 5px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: white
+}
+
+input[type=checkbox]:checked:after {
+    content: ' ';
+    background: transparent;
+    height: 8px;
+    width: 16px;
+    border-radius: 7px;
+    display: block;
+    position: absolute;
+    left: 2px;
+    bottom: 5px;
+    transform: rotate(-35deg);
+    border-bottom: 4px solid forestgreen;
+    border-left: 3px solid forestgreen;
+}
+
+label {
+    width: calc(100% - 20px);
+}
+
+button {
+    margin: 20px auto;
+    cursor: pointer
+}
+
+.eye-overlay {
+    display: inline-block;
+    float: left;
+    font-size: 20px;
+    margin-left: -23px;
+    padding-top: 12px;
+}
+
+.eye-overlay[data-state=hidden] {
+    color: #555
+}
+
+.eye-overlay[data-state=shown] {
+    color: #f33
+}
+
+.login-box img, .register-box img {
+    display: block;
+    margin: 20px auto;
+    height: 80px
+}
+
+.login-box div, .register-box div {
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    font-size: 32px;
+    font-weight: 100;
+}
 
 /* ==================================
    Responsive
@@ -5201,29 +5365,43 @@ ul.menu li img {
    ================================== */
 
 /*COLOR LIGHT fff*/
-ul.menu li:hover, ul.menu li:hover, ul.menu li ul li {
+ul.menu li:hover, ul.menu li:hover, ul.menu li ul li, button, footer, .login-box div, .register-box div, label, a {
     color: #fff
 }
 
 /*COLOR NOTSOLIGHT*/
 /*COLOR DARK*/
+p.fake {
+    color: #cd0d79;
+}
+
 /*COLOR DARKER 000*/
 ul.menu li.nohover:hover {
     color: #000
 }
 
 /*COLOR BG LIGHT fff*/
-ul.menu li, ul.menu li.nohover:hover {
+ul.menu li, ul.menu li.nohover:hover, input {
     background: #fff
 }
 
 /*COLOR BG NOTSOLIGHT*/
 /*COLOR BG DARK 555*/
-ul.menu li:hover, ul.menu li ul li {
-    background: #555
+ul.menu li:hover, ul.menu li ul li, button {
+    background: #ff1097
 }
 
 /*COLOR BG DARKER 666*/
-ul.menu li ul li:hover {
-    background: #666
+ul.menu li ul li:hover, button:hover {
+    background: #cd0d79;
+}
+
+.login-box, .register-box, input, button {
+    border-color: #ddd
+}
+
+body.login {
+    background: white url(/assets/img/emailloginbg.jpg) 0 -30px no-repeat;
+    background-attachment: fixed;
+    background-size: cover
 }

@@ -1,6 +1,6 @@
 <header>
     <div class="container">
-        <a href="/" class="logo"><img src="#" alt=""></a>
+        <a href="/" class="logo"><img src="/assets/img/logo.png" alt=""></a>
         <ul class="menu">
             <li><a href="/">Home</a></li>
             <li><a href="#">Menu</a></li>
